@@ -6,7 +6,7 @@
 
 ## A. Overview
 
-Detecting and classifying crisis-related event information on social media is crucial for humanitarian operations. Our work is building a dataset that simulates real-world scenarios and creating a pipeline for the task by creating a Large-Scale dataset and a Baseline classifier:
+Detecting and classifying crisis-related event information on social media is crucial for humanitarian operations. Our work is building a Large-Scale dataset that simulates real-world scenarios and creating a multi-stage pipeline classifier for addressing the task:
 
 ### A.1. The CrisisLiveTxt Dataset
 
@@ -122,7 +122,7 @@ We apply [FocalLoss](https://ieeexplore.ieee.org/document/8417976) for Stage 1 a
 
 ### Fine-Tunig
 
-BERT is a small model (~110 million parameters) in the current landscape so that we can fine-tune the whole model
+BERT is a small model (~110 million parameters) in the current landscape, so that we can fine-tune the whole model
 
 For Llama (3.07 billion parameters) fine-tuning all parameters is computationally
 expensive and can lead to side effects. We apply [Quantized Low-Rank Adaptation (QloRA)](https://github.com/artidoro/qlora), a [Parameter-Efficient Fine-Tuning (PEFT)](https://huggingface.co/docs/peft/en/index) technique that updates only a small portion of the parameters during the fine-tuning process.
